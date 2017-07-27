@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 module.exports = {
 	entry: {
 		"Modal": './src/Modal.js',
@@ -21,5 +23,10 @@ module.exports = {
 				}
 			}
 		]
-	}
+	},
+	plugins: [
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'commons'
+		})
+	]
 };
